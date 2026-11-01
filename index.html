@@ -427,6 +427,50 @@ header.bar nav a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);bor
 .vlist .vout{display:block;padding:6px 12px 10px;font-family:var(--ui);font-size:.82rem}
 .dsec{display:grid;gap:10px}
 
+/* reading path under the hero */
+.path{background:var(--stage);border-bottom:1px solid rgba(var(--gold-rgb),.35)}
+.path .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.path a{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:18px 16px 20px;color:var(--stage-ink);text-decoration:none;border-inline-start:1px solid rgba(var(--gold-rgb),.25)}
+.path a:first-child{border-inline-start:0}
+.path a:hover{background:rgba(var(--gold-rgb),.08)}
+.path a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.path .pn{font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1;color:var(--gold)}
+.path b{display:block;font-family:var(--display);font-weight:800;font-size:1.35rem;line-height:1.1}
+.path small{display:block;font-family:var(--ui);font-size:.86rem;color:var(--stage-muted);margin-top:3px;line-height:1.35}
+@media (max-width:820px){ .path .wrap{grid-template-columns:1fr 1fr} .path a:nth-child(3){border-inline-start:0} .path a:nth-child(n+3){border-top:1px solid rgba(var(--gold-rgb),.25)} }
+/* chronicle infographic */
+.chron-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:3px solid var(--ink)}
+.chron-stats div{padding:14px 0 4px;display:grid;gap:4px}
+.chron-stats div + div{border-inline-start:1px solid var(--rule);padding-inline-start:18px;margin-inline-start:18px}
+.chron-stats b{font-family:var(--display);font-weight:800;font-size:3rem;line-height:1;color:var(--accent)}
+.chron-stats div:nth-child(2) b{color:var(--ink)}
+.chron-stats span{font-family:var(--ui);font-size:.92rem;color:var(--muted)}
+.chron-track{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(8,minmax(92px,1fr)) minmax(176px,1.5fr);gap:0;overflow-x:auto;border-top:2px solid var(--ink);position:relative}
+.chron-track li{display:grid;grid-template-rows:auto 1fr;gap:8px;padding:12px 10px 14px;border-inline-start:1px solid var(--rule);min-width:0}
+.chron-track li:first-child{border-inline-start:0}
+.chron-track .cy{font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1}
+.chron-track .cx{display:grid;gap:4px;align-content:start}
+.chron-track em{font-style:normal;font-family:var(--ui);font-size:.86rem;font-weight:600;line-height:1.25;padding:4px 7px;border-radius:3px;background:var(--accent-soft);color:var(--accent);border-inline-start:3px solid var(--accent);display:grid;gap:3px}
+.chron-track em i{font-style:normal;justify-self:start;font-size:.72rem;font-weight:700;padding:0 7px;border-radius:999px;border:1px solid currentColor;opacity:.75;color:var(--ink)}
+.chron-track em i.w{border-style:dashed}
+.chron-track li.now{background:var(--stage);color:var(--stage-ink);border-color:var(--stage);min-width:150px}
+.chron-track li.now .cy{color:var(--gold)}
+.chron-track li.now em{background:rgba(var(--gold-rgb),.15);color:var(--stage-ink);border-color:var(--gold)}
+.chron-track li.now em i{color:var(--stage-ink)}
+.chron-legend{display:flex;flex-wrap:wrap;gap:16px;font-family:var(--ui);font-size:.85rem;color:var(--muted)}
+.chron-legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-inline-end:6px}
+.lg-x{background:var(--accent)} .lg-r{border:1px solid var(--muted);border-radius:999px !important} .lg-w{border:1px dashed var(--muted);border-radius:999px !important}
+.chron-more a{font-family:var(--ui);font-weight:700;color:var(--link);text-decoration:none}
+@media (max-width:820px){ .chron-stats b{font-size:2.3rem} .chron-track{grid-template-columns:1fr;border-top:0} .chron-track li{grid-template-columns:64px 1fr;grid-template-rows:auto auto;border-inline-start:0;border-top:1px solid var(--rule)} .chron-track .cy{grid-row:span 2} .chron-track .cx{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))} }
+/* video actions */
+.vact{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.vbtn{all:unset;cursor:pointer;font-family:var(--ui);font-size:.8rem;font-weight:700;padding:4px 11px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--ink);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.vbtn:hover{border-color:var(--ink)}
+.vbtn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.vbtn.dl{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.feat-cap .vact .vbtn{font-size:.88rem;padding:6px 14px}
+.vc.hl{outline:2px solid var(--gold);outline-offset:3px}
+
 /* featured carousel */
 .feat{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(260px,1fr);gap:18px;align-items:start}
 .feat-main{display:grid;gap:12px;min-width:0}
@@ -471,11 +515,10 @@ header.bar nav a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);bor
   <a class="brand" href="#top">הכיבוש הפרלמנטרי</a>
   <button type="button" class="navbtn" aria-expanded="false" aria-controls="mainnav"><span aria-hidden="true">☰</span> פרקים</button>
   <nav id="mainnav" aria-label="פרקים">
-    <a href="#wall">הציטוטים</a>
-    <a href="#people">19 הנבחרים</a>
-    <a href="#timeline">ציר זמן</a>
     <a href="#videos">וידאו</a>
-    <a href="#sec7a">ניסיון הפסילה</a>
+    <a href="#chron">הפסילות</a>
+    <a href="#people">19 הנבחרים</a>
+    <a href="#wall-body">הציטוטים</a>
     <a href="#platforms">המצעים</a>
     <a href="#ballot">הקלפי</a>
     <a href="#coalition">ומה עכשיו</a>
@@ -494,53 +537,17 @@ header.bar nav a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);bor
   </div>
 </div></section>
 
-<div class="chapter" id="wall"><div class="wrap">
-  <span class="num">פרק 1</span><h2>במילים שלהם</h2>
-  <p>הצהרות, נאומים, ראיונות ופוסטים מ־2009 ועד היום. בחרו נושא, ולחצו על שם כדי לראות את כל מה שהנבחר אמר.</p>
-</div></div>
-
-<section id="wall-body"><div class="wrap">
-  <div class="narr" id="narr" role="group" aria-label="נושאים"></div>
-  <div class="filters">
-    <div class="seg" id="w-list">
-      <button type="button" data-v="all" aria-pressed="true">כולם</button>
-      <button type="button" data-v="joint" aria-pressed="false">המשותפת</button>
-      <button type="button" data-v="raam" aria-pressed="false">רע״ם</button>
-    </div>
-    <input id="w-q" type="search" placeholder="חיפוש בציטוטים" aria-label="חיפוש בציטוטים">
-    <span class="count" id="w-count" aria-live="polite"></span>
-  </div>
-  <div class="wall" id="qwall"></div>
-</div></section>
-
-<section id="people"><div class="wrap">
-  <div class="sechead">
-    <span class="kicker">19 הנבחרים</span>
-    <h2>מי הם</h2>
-  </div>
-  <div class="roster" id="roster"></div>
-  <div class="people" id="cards"></div>
-</div></section>
-
-<section id="timeline"><div class="wrap">
-  <div class="sechead">
-    <span class="kicker" id="tl-range"></span>
-    <h2 id="tl-title"></h2>
-  </div>
-  <div class="filters">
-    <div class="seg" id="tl-list">
-      <button type="button" data-v="all" aria-pressed="true">כולם</button>
-      <button type="button" data-v="joint" aria-pressed="false">המשותפת</button>
-      <button type="button" data-v="raam" aria-pressed="false">רע״ם</button>
-    </div>
-  </div>
-  <div class="tl" id="tl"></div>
-</div></section>
+<nav class="path" aria-label="מסלול הקריאה"><div class="wrap">
+  <a href="#videos"><span class="pn">01</span><span><b>צפו</b><small>ספריית הווידאו: הקטעים שהם לא רוצים שתראו</small></span></a>
+  <a href="#chron"><span class="pn">02</span><span><b>הבינו</b><small>23 שנה של פסילות, שכולן בוטלו</small></span></a>
+  <a href="#people"><span class="pn">03</span><span><b>הכירו</b><small>19 הנבחרים, אחד אחד</small></span></a>
+  <a href="#wall-body"><span class="pn">04</span><span><b>קראו</b><small>מה הם אומרים, במילים שלהם</small></span></a>
+</div></nav>
 
 <section id="videos"><div class="wrap">
   <div class="sechead">
-    <span class="kicker">בווידאו</span>
-    <h2>הופעות מצולמות</h2>
+    <span class="kicker">צפו</span>
+    <h2>ספריית הווידאו</h2>
     <p class="lede">חמאס, השהידים, עזה והממשלה: הרגעים שבהם הם אומרים את זה בקול.</p>
   </div>
   <div class="feat" id="feat" aria-label="הקטעים הבולטים">
@@ -563,6 +570,66 @@ header.bar nav a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);bor
     <span class="count" id="v-count" aria-live="polite"></span>
   </div>
   <div id="vgrid"></div>
+</div></section>
+
+<section id="chron" class="chron"><div class="wrap">
+  <div class="sechead">
+    <span class="kicker">כרוניקה</span>
+    <h2>פוסלים, ומחזירים</h2>
+    <p class="lede">מאז 2003 פסלה ועדת הבחירות המרכזית 16 פעמים רשימות ומועמדים ערבים. בית המשפט העליון ביטל כל פסילה שהגיעה להכרעה.</p>
+  </div>
+  <div class="chron-stats">
+    <div><b>16</b><span>פסילות בוועדת הבחירות</span></div>
+    <div><b>15</b><span>בוטלו בבית המשפט העליון</span></div>
+    <div><b>1</b><span>מועמד פרש לפני פסק הדין</span></div>
+  </div>
+  <ol class="chron-track" id="chronTrack"></ol>
+  <div class="chron-legend"><span><i class="lg-x"></i>נפסל בוועדת הבחירות</span><span><i class="lg-r"></i>הוחזר בבית המשפט העליון</span><span><i class="lg-w"></i>פרש</span></div>
+  <p class="chron-more"><a href="#sec7a">ההליך של 2026, צעד אחר צעד ←</a></p>
+  <p class="srcs" data-s="N73 N01 N02"></p>
+</div></section>
+
+<div class="chapter" id="wall"><div class="wrap">
+  <span class="num">פרק 1</span><h2>במילים שלהם</h2>
+  <p>הצהרות, נאומים, ראיונות ופוסטים מ־2009 ועד היום. בחרו נושא, ולחצו על שם כדי לראות את כל מה שהנבחר אמר.</p>
+</div></div>
+
+<section id="people"><div class="wrap">
+  <div class="sechead">
+    <span class="kicker">19 הנבחרים</span>
+    <h2>מי הם</h2>
+  </div>
+  <div class="roster" id="roster"></div>
+  <div class="people" id="cards"></div>
+</div></section>
+
+<section id="wall-body"><div class="wrap">
+  <div class="narr" id="narr" role="group" aria-label="נושאים"></div>
+  <div class="filters">
+    <div class="seg" id="w-list">
+      <button type="button" data-v="all" aria-pressed="true">כולם</button>
+      <button type="button" data-v="joint" aria-pressed="false">המשותפת</button>
+      <button type="button" data-v="raam" aria-pressed="false">רע״ם</button>
+    </div>
+    <input id="w-q" type="search" placeholder="חיפוש בציטוטים" aria-label="חיפוש בציטוטים">
+    <span class="count" id="w-count" aria-live="polite"></span>
+  </div>
+  <div class="wall" id="qwall"></div>
+</div></section>
+
+<section id="timeline"><div class="wrap">
+  <div class="sechead">
+    <span class="kicker" id="tl-range"></span>
+    <h2 id="tl-title"></h2>
+  </div>
+  <div class="filters">
+    <div class="seg" id="tl-list">
+      <button type="button" data-v="all" aria-pressed="true">כולם</button>
+      <button type="button" data-v="joint" aria-pressed="false">המשותפת</button>
+      <button type="button" data-v="raam" aria-pressed="false">רע״ם</button>
+    </div>
+  </div>
+  <div class="tl" id="tl"></div>
 </div></section>
 
 <div class="chapter" id="idea"><div class="wrap">
@@ -909,6 +976,7 @@ const S = [
  [`N70`,`ח׳טיב־יאסין בהודעת הבחירות של רע״ם`,`14.10.2026`,`https://panet.com/story/4305228`,`id`,`פאנט`],
  [`N71`,`חוג׳יראת ב־i24NEWS על הגושים`,`8.10.2026`,`https://www.inn.co.il/news/708052`,`id`,`ערוץ 7`],
  [`N72`,`אלהואשלה בכאן חדשות`,`29.1.2026`,`https://www.kan.org.il/content/kan-news/politic/994040/`,`id`,`כאן חדשות`],
+ [`N73`,`המכון הישראלי לדמוקרטיה: פסילת רשימות ומועמדים, 2003 עד 2022`,`31.8.2026`,`https://www.idi.org.il/articles/65951`,`law`,`המכון הישראלי לדמוקרטיה`],
  [`N41`,`תוצאות סופיות: 53, 48 ו־19`,`30.10.2026`,`https://www.timesofisrael.com/with-all-votes-counted-netanyahus-bloc-at-53-seats-eisenkots-48-arab-parties-19/`,`coal`,`טיימס אוף ישראל`],
  [`N10`,`תמונת הגושים`,`29.10.2026`,`https://www.calcalist.co.il/updates_news/article/b1m9lfrhme`,`coal`,`כלכליסט`],
  [`N11`,`איזנקוט: ״רע״ם לא תהיה חלק מהממשלה״`,`26.9.2026`,`https://www.mako.co.il/news-israel-elections/2026_q4/Article-195ef5f365ad0a1026.htm`,`coal`,`חדשות 12`],
@@ -1067,12 +1135,16 @@ const vUrl = v=>v[11]==='yt'?`https://www.youtube.com/watch?v=${encodeURICompone
 const FEAT = ["LOC-1", "LOC-6", "LOC-2", "M001", "LOC-7", "LOC-8", "LOC-3", "SV-X1", "SV-X2", "SV-X3", "LOC-4", "SF-6", "LOC-5"];
 const dur = s=>{if(!s) return ''; const h=Math.floor(s/3600), m=Math.floor(s%3600/60), x=String(s%60).padStart(2,'0'); return h?`${h}:${String(m).padStart(2,'0')}:${x}`:`${m}:${x}`;};
 const vWho = v=>v[13]||(v[1]?PMAP[v[1]].name:`הליכי הפסילה`);
+/* Inside the Claude viewer downloads are not allowed, so the button only appears on the live site. */
+const IN_VIEWER = /claudeusercontent|\.frame\./.test(location.hostname);
+const vSlug = v=>(v[12]||'').split('/').pop();
+const vActs = v=>`<div class="vact"><button type="button" class="vbtn" data-vshare="${v[0]}" aria-expanded="false">שיתוף</button>${v[11]==='local'&&!IN_VIEWER?`<a class="vbtn dl" href="${esc(v[12])}" download="${esc(vSlug(v))}">הורדה ↓</a>`:''}</div>`;
 const outLink = v=>v[11]==='local'?`<span>${esc(v[10])}</span>`:`<a href="${esc(vUrl(v))}" target="_blank" rel="noopener">${esc(v[10])} · ${VPLAT[v[11]]} ↗</a>`;
 function vCard(v){
   const p = PMAP[v[1]], d = dur(v[9]);
-  return `<article class="vc" data-vid="${v[0]}">
+  return `<article class="vc" data-vid="${v[0]}" id="v-${v[0]}">
     <button type="button" class="vthumb" data-play="${v[0]}" aria-label="ניגון: ${esc(v[4])}, ${esc(vWho(v))}${d?`, ${d} דקות`:''}"><span class="lg">${VLANG[v[7]]||v[7]} · ${VPLAT[v[11]]}</span><span class="pl"></span><span class="nm">${esc(vWho(v))}</span>${d?`<span class="du">${d}</span>`:''}</button>
-    <div class="vbody"><span class="tagn">${VTOPIC[v[6]]||``}</span><b lang="${tLang(v[4])}" dir="auto">${esc(v[4])}</b><div class="meta"><span>${[p?party(p):'',esc(v[2])].filter(Boolean).join(' · ')}</span>${outLink(v)}</div></div></article>`;
+    <div class="vbody"><span class="tagn">${VTOPIC[v[6]]||``}</span><b lang="${tLang(v[4])}" dir="auto">${esc(v[4])}</b><div class="meta"><span>${[p?party(p):'',esc(v[2])].filter(Boolean).join(' · ')}</span>${outLink(v)}</div>${vActs(v)}</div></article>`;
 }
 /* Players are created only on click: youtube-nocookie and Facebook as iframes, X through its widget script.
    If the host forbids them (a securitypolicyviolation fires), the video opens on its own site instead. */
@@ -1129,12 +1201,29 @@ segBind('#v-list',vs,'list',()=>{vs.shown=12;renderVideos()});
 ['who','topic','plat'].forEach(k=>$('#v-'+k).addEventListener('change',e=>{vs[k]=e.target.value;vs.shown=12;renderVideos()}));
 
 renderVideos();
+/* video share & download. Local files: the phone's share sheet gets the video file itself; otherwise a link to it on this site. */
+document.addEventListener('click',async e=>{
+  const b = e.target.closest('[data-vshare]'); if(!b) return;
+  const v = VBY[b.dataset.vshare]; if(!v) return;
+  const url = `${SITE_URL}#v-${v[0]}`, text = `${v[4]} | ${vWho(v)}${v[2]?', '+v[2]:''}`;
+  if(navigator.share && matchMedia('(pointer:coarse)').matches){
+    try{
+      if(v[11]==='local' && navigator.canShare){ const blob = await fetch(v[12]).then(r=>r.blob()); const f = new File([blob], vSlug(v), {type:'video/mp4'}); if(navigator.canShare({files:[f]})){ await navigator.share({files:[f], title:'הכיבוש הפרלמנטרי', text:text+'\n'+url}); return; } }
+      await navigator.share({title:'הכיבוש הפרלמנטרי', text, url}); return;
+    }catch(err){ if(err&&err.name==='AbortError') return; }
+  }
+  const host = b.closest('.vact'); const old = host.parentNode.querySelector('.shmenu'); if(old){ old.remove(); b.setAttribute('aria-expanded','false'); return; }
+  const m = document.createElement('div'); m.className='shmenu';
+  m.innerHTML = `<a href="https://wa.me/?text=${encodeURIComponent(text+'\n'+url)}" target="_blank" rel="noopener">וואטסאפ</a><a href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">X</a><a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" target="_blank" rel="noopener">פייסבוק</a><button type="button" data-copy>העתקת קישור</button>`;
+  m.querySelector('[data-copy]').addEventListener('click',ev=>{ const t=ev.currentTarget; copyText(url).then(()=>{t.textContent='הקישור הועתק'; t.classList.add('ok');}).catch(()=>{t.textContent=url;}); });
+  host.after(m); b.setAttribute('aria-expanded','true');
+});
 /* featured carousel */
 let fIdx = 0;
 function renderFeat(autoplay){
   const v = VBY[FEAT[fIdx]]; if(!v) return; const p = PMAP[v[1]], d = dur(v[9]);
   $('#featMain').innerHTML = `<div class="feat-stage" id="featStage"><button type="button" class="vthumb big" data-play="${v[0]}" data-feat="1" aria-label="ניגון: ${esc(v[4])}"><span class="lg">${VTOPIC[v[6]]||''}${v[11]==='sf'?' · שומר סף':''}</span><span class="pl"></span><span class="nm">${esc(vWho(v))}</span>${d?`<span class="du">${d}</span>`:''}</button></div>
-    <div class="feat-cap"><b dir="auto">${esc(v[4])}</b><span class="meta">${p?party(p)+' · ':''}${v[2]?esc(v[2])+' · ':''}${esc(v[10])}${v[11]!=='local'?` · <a href="${esc(vUrl(v))}" target="_blank" rel="noopener">${VPLAT[v[11]]} ↗</a>`:''}</span></div>`;
+    <div class="feat-cap"><b dir="auto">${esc(v[4])}</b><span class="meta">${p?party(p)+' · ':''}${v[2]?esc(v[2])+' · ':''}${esc(v[10])}${v[11]!=='local'?` · <a href="${esc(vUrl(v))}" target="_blank" rel="noopener">${VPLAT[v[11]]} ↗</a>`:''}</span>${vActs(v)}</div>`;
   $('#featRail').querySelectorAll('li').forEach((li,i)=>li.classList.toggle('on',i===fIdx));
   if(autoplay) play(v[0], $('#featMain .vthumb'));
 }
@@ -1146,6 +1235,20 @@ document.addEventListener('click',e=>{
 renderFeat(false);
 $('#pclips').innerHTML = [...PROC_CLIPS.slice(0,3), VBY['SV-002'], ...PROC_CLIPS.slice(3)].map(vCard).join('');
 const pVideos = slug=>{const vv=VIDEOS.filter(v=>v[1]===slug); return vv.length?`<div class="dsec"><h3>בווידאו</h3><ul class="vlist">${vv.map(v=>`<li><button type="button" class="vrow" data-play="${v[0]}"><i aria-hidden="true"></i><span><b lang="${tLang(v[4])}" dir="auto">${esc(v[4])}</b><small>${[esc(v[2]),dur(v[9]),VLANG[v[7]]||'',esc(v[10]),VPLAT[v[11]]].filter(Boolean).join(' · ')}</small></span></button></li>`).join('')}</ul></div>`:'';};
+
+/* chronicle of disqualifications */
+const CHRON = [
+ [2003, [[`בל״ד`,`r`],[`עזמי בשארה`,`r`],[`אחמד טיבי`,`r`]]],
+ [2009, [[`בל״ד`,`r`],[`רע״ם־תע״ל`,`r`]]],
+ [2013, [[`חנין זועבי`,`r`]]],
+ [2015, [[`חנין זועבי`,`r`]]],
+ [2019, [[`רע״ם־בל״ד`,`r`],[`עופר כסיף`,`r`]]],
+ [2020, [[`היבא יזבק`,`r`]]],
+ [2021, [[`אבתיסאם מראענה`,`r`]]],
+ [2022, [[`בל״ד`,`r`]]],
+ [2026, [[`רע״ם`,`r`],[`הרשימה המשותפת`,`r`],[`עופר כסיף`,`r`],[`סאמי אבו שחאדה`,`w`]]],
+];
+$('#chronTrack').innerHTML = CHRON.map(([y,xs])=>`<li class="${y===2026?'now':''}"><span class="cy">${y}</span><span class="cx">${xs.map(x=>`<em><span>${x[0]}</span><i class="${x[1]}">${x[1]==='w'?'פרש':'הוחזר'}</i></em>`).join('')}</span></li>`).join('');
 /* profile dialog */
 const dlg = $('#dlg');
 function openP(slug){
@@ -1165,6 +1268,10 @@ dlg.addEventListener('click',e=>{ if(e.target===dlg || e.target.closest('[data-c
 document.addEventListener('click',e=>{ const b=e.target.closest('[data-open]'); if(b) openP(b.dataset.open); });
 function route(){
   const m = location.hash.match(/^#p-([a-z]+)$/); if(m){ openP(m[1]); return; }
+  const vm = location.hash.match(/^#v-([A-Za-z0-9_-]+)$/);
+  if(vm && VBY[vm[1]]){ const id=vm[1], fi=FEAT.indexOf(id);
+    if(fi>=0){ fIdx=fi; renderFeat(false); $('#feat').scrollIntoView({block:'start'}); return; }
+    vOpen.add(VBY[id][1]); renderVideos(); const el=document.getElementById('v-'+id); if(el){ el.scrollIntoView({block:'center'}); el.classList.add('hl'); setTimeout(()=>el.classList.remove('hl'),4000); } return; }
   const k = location.hash.match(/^#q-([a-z0-9-]+)$/);
   if(k && QBY[k[1]]){ ws.n='all'; ws.list='all'; ws.q=''; $('#w-q').value=''; $('#narr').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.n==='all')); $('#w-list').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.v==='all')); renderWall();
     const el = document.getElementById('q-'+k[1]); if(el){ el.scrollIntoView({block:'center'}); el.classList.add('hl'); setTimeout(()=>el.classList.remove('hl'),4000); } }
