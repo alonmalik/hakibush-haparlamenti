@@ -509,6 +509,12 @@ header.bar nav a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);bor
 .car-dots button[aria-current="true"]{background:var(--accent);width:22px;border-radius:4px}
 .car-dots button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 /* real frames for our own clips */
+.vthumb.txt{align-content:end;gap:6px;padding:14px 16px}
+.vthumb.txt::before{background:radial-gradient(120% 90% at 100% 100%,rgba(var(--gold-rgb),.16),transparent 60%),repeating-linear-gradient(135deg,transparent 0 14px,rgba(var(--gold-rgb),.06) 14px 15px)}
+.vthumb.txt::after{content:"״";position:absolute;inset-inline-start:-6px;top:-34px;font-family:var(--display);font-weight:800;font-size:9rem;line-height:1;color:rgba(var(--gold-rgb),.16);pointer-events:none}
+.vthumb.txt .nm{font-size:.92rem;font-family:var(--ui);font-weight:700;color:var(--gold);max-width:72%;line-height:1.1}
+.vthumb.txt .qt{position:relative;font-family:var(--display);font-weight:800;font-size:1.22rem;line-height:1.08;max-width:84%;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.vthumb.txt .qt i{font-style:normal;color:var(--gold)}
 .vthumb.img::before{background:linear-gradient(to top,rgba(0,0,0,.82) 0,rgba(0,0,0,.25) 45%,rgba(0,0,0,0) 70%);z-index:1}
 .vthumb.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vthumb.img .nm,.vthumb.img .pl,.vthumb.img .lg,.vthumb.img .du{z-index:2}
@@ -1168,7 +1174,8 @@ const IN_VIEWER = /claudeusercontent|\.frame\./.test(location.hostname);
 const vSlug = v=>(v[12]||'').split('/').pop();
 const vActs = v=>`<div class="vact"><button type="button" class="vbtn" data-vshare="${v[0]}" aria-expanded="false">שיתוף</button>${v[11]==='local'&&!IN_VIEWER?`<a class="vbtn dl" href="${esc(v[12])}" download="${esc(vSlug(v))}">הורדה ↓</a>`:''}</div>`;
 const vPoster = v=>v[11]==='local'?v[12].replace(/\.mp4$/,'.jpg'):'';
-const vThumb = v=>{ const d=dur(v[9]), po=vPoster(v); return `<button type="button" class="vthumb${po?' img':''}" data-play="${v[0]}" aria-label="ניגון: ${esc(v[4])}, ${esc(vWho(v))}${d?`, ${d} דקות`:''}">${po?`<img src="${esc(po)}" alt="" loading="lazy" decoding="async" width="1280" height="720">`:''}<span class="lg">${VLANG[v[7]]||v[7]} · ${VPLAT[v[11]]}</span><span class="pl"></span><span class="nm">${esc(vWho(v))}</span>${d?`<span class="du">${d}</span>`:''}</button>`; };
+const vQuote = v=>{ const t=v[4]; const m=t.match(/:\s*״([^״]{4,})״/)||t.match(/^״([^״]{4,})״:/); let q=m?m[1]:t.replace(/\s+[-–]\s+[^-–]+$/,''); if(q.length>78) q=q.slice(0,76).replace(/\s+\S*$/,'')+'…'; return {q, quoted:!!m}; };
+const vThumb = v=>{ const d=dur(v[9]), po=vPoster(v); if(!po){ const {q,quoted}=vQuote(v); return `<button type="button" class="vthumb txt" data-play="${v[0]}" aria-label="ניגון: ${esc(v[4])}, ${esc(vWho(v))}${d?`, ${d} דקות`:''}"><span class="lg">${VLANG[v[7]]||v[7]} · ${VPLAT[v[11]]}</span><span class="pl"></span><span class="nm">${esc(vWho(v))}</span><span class="qt">${quoted?'<i>״</i>':''}${esc(q)}${quoted?'<i>״</i>':''}</span>${d?`<span class="du">${d}</span>`:''}</button>`; } return `<button type="button" class="vthumb${po?' img':''}" data-play="${v[0]}" aria-label="ניגון: ${esc(v[4])}, ${esc(vWho(v))}${d?`, ${d} דקות`:''}">${po?`<img src="${esc(po)}" alt="" loading="lazy" decoding="async" width="1280" height="720">`:''}<span class="lg">${VLANG[v[7]]||v[7]} · ${VPLAT[v[11]]}</span><span class="pl"></span><span class="nm">${esc(vWho(v))}</span>${d?`<span class="du">${d}</span>`:''}</button>`; };
 const outLink = v=>v[11]==='local'?`<span>${esc(v[10])}</span>`:`<a href="${esc(vUrl(v))}" target="_blank" rel="noopener">${esc(v[10])} · ${VPLAT[v[11]]} ↗</a>`;
 function vCard(v){
   const p = PMAP[v[1]], d = dur(v[9]);
