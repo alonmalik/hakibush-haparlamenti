@@ -1608,6 +1608,25 @@ markNav();
   function hashUnfold(){ const id=decodeURIComponent(location.hash.slice(1)); if(!id) return; const el=document.getElementById(id); if(el&&el.closest('.folded')){ el.scrollIntoView({block:'start'}); } }
   window.addEventListener('hashchange',hashUnfold); hashUnfold();
 })();
+/* analytics: GoatCounter, cookieless. Self-hosted ping, no third-party script runs on the page. */
+(function(){
+  const EP='https://hakibush.goatcounter.com/count';
+  const on=/(^|\.)hakibush\.com$|github\.io$/.test(location.hostname) && !navigator.webdriver;
+  function send(o){ if(!on) return; try{ const q=new URLSearchParams(Object.assign({s:[screen.width,screen.height,(window.devicePixelRatio||1)].join(','),rnd:Math.random().toString(36).slice(2)},o)); const u=EP+'?'+q.toString(); if(!(navigator.sendBeacon&&navigator.sendBeacon(u))){ const i=new Image(); i.src=u; } }catch(e){} }
+  send({p:location.pathname||'/', t:document.title, r:document.referrer, q:location.search});
+  const ev=(name,title)=>send({p:name, t:title||name, e:'true'});
+  document.addEventListener('click',e=>{
+    const t=e.target; if(!t.closest) return;
+    const vc=t.closest('[data-vid]'), vid=vc&&vc.dataset.vid;
+    if(t.closest('.vthumb')&&vid) return ev('play/'+vid,'ניגון: '+vid);
+    if(t.closest('.vbtn.dl')&&vid) return ev('download/'+vid,'הורדה: '+vid);
+    const sh=t.closest('.shmenu a,.shmenu button'); if(sh) return ev('share/'+((sh.href&&new URL(sh.href).hostname)||'copy'),'שיתוף');
+    if(t.closest('[data-vshare]')) return ev('share-video/'+t.closest('[data-vshare]').dataset.vshare,'שיתוף סרטון');
+    const d=t.closest('.doc a'); if(d) return ev('doc/'+d.href.split('/').pop().slice(0,60),'מסמך: '+d.textContent.trim().slice(0,40));
+    const a=t.closest('a[target="_blank"]'); if(a&&a.hostname&&a.hostname!==location.hostname) return ev('out/'+a.hostname,'יציאה: '+a.hostname);
+    const k=t.closest('.key a'); if(k) return ev('key'+k.getAttribute('href').replace('#','/'),'מפתח נושאים');
+  },true);
+})();
 window.addEventListener('hashchange',route);
 route();
 </script>
