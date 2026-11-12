@@ -1072,6 +1072,84 @@ html.anim .wtl li:not(.lit) .vd.law{opacity:0;transform:translateY(6px)}
 .mach-btn .ic{font-size:.8em;line-height:1;min-width:1em;text-align:center}
 .mach-btn.mach-replay{color:#141414;background:var(--mark);border-color:var(--mark)}
 .mach-btn[hidden]{display:none}
+/* ===== petition (#petition): ink ground, paper form, stamp ===== */
+.pt{background:#141414;color:#F3EFE6;border-bottom:0;padding-block:72px 80px;position:relative;overflow:hidden;scroll-margin-top:56px}
+.pt::before{content:"";position:absolute;inset:0 0 auto;height:6px;background:var(--orange)}
+.pt .wrap.pt-grid{display:grid;grid-template-columns:1fr minmax(320px,460px);gap:56px;align-items:start}
+.pt-txt{position:relative;display:grid;gap:16px;align-content:start}
+.pt-k{justify-self:start;font-family:var(--label);font-weight:700;font-size:.95rem;background:var(--orange);color:#141414;padding:3px 12px 4px;border-radius:999px}
+.pt h2{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(2.3rem,5.2vw,4.1rem);line-height:1.02;letter-spacing:-.005em;color:#F3EFE6}
+.pt-pal{position:relative;display:inline-block;color:#FF5146}
+.pt-pal::after{content:"";position:absolute;inset-inline:-4%;top:52%;height:.12em;background:#F3EFE6;transform-origin:right;transform:scaleX(var(--strike,1));border-radius:2px}
+.pt-l2{display:block;margin-top:.12em;font-size:.62em;color:var(--mark)}
+.pt-lead{margin:0;font-family:var(--ui);font-size:1.18rem;line-height:1.6;color:#D9D3C8;max-width:36rem}
+.pt-lead mark{background:var(--mark);color:#141414;padding:0 .2em;border-radius:2px}
+.pt-count{margin:6px 0 0;display:flex;align-items:baseline;gap:10px;font-family:var(--label);font-weight:700;font-size:1.15rem;color:#F3EFE6}
+.pt-count[hidden]{display:none}
+.pt-count b{font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:1;color:var(--mark);font-variant-numeric:tabular-nums}
+.pt-stamp{width:132px;height:132px;transform:rotate(-12deg);margin-top:6px;opacity:.95}
+.pt-stamp circle{fill:none;stroke:#FF5146;stroke-width:6} .pt-stamp circle.in{stroke-width:2}
+.pt-stamp text{font-family:var(--display);font-weight:800;font-size:44px;fill:#FF5146}
+
+.pt-form{position:relative;background:#F3EFE6;color:#141414;border-radius:6px;padding:0 24px 22px;display:grid;gap:14px;box-shadow:0 22px 50px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06)}
+.pt-fh{display:flex;justify-content:space-between;align-items:center;margin:0 -24px 6px;padding:12px 24px;border-bottom:2px dashed rgba(20,20,20,.25);font-family:var(--label);font-weight:700;font-size:.95rem}
+.pt-fno{background:#141414;color:var(--mark);padding:2px 10px 3px;border-radius:3px;font-size:.85rem}
+.pt-f{display:grid;gap:6px}
+.pt-f label{font-family:var(--label);font-weight:700;font-size:1rem}
+.pt-f label small{font-weight:500;font-size:.85rem;color:#5B5B5B;margin-inline-start:6px}
+.pt-f input{font:inherit;font-family:var(--ui);font-size:1.08rem;color:#141414;background:#fff;border:2px solid #141414;border-radius:4px;padding:11px 12px;min-height:48px;box-sizing:border-box;width:100%}
+.pt-f input[dir="ltr"]{text-align:left}
+.pt-f input[dir="ltr"]::placeholder{text-align:left}
+.pt-f input:focus-visible{outline:3px solid var(--orange);outline-offset:1px}
+.pt-f input[aria-invalid="true"]{border-color:#B3221A;background:#FFF5F4}
+.pt-err{margin:0;font-family:var(--ui);font-weight:700;font-size:.92rem;color:#B3221A;min-height:0}
+.pt-err:empty{display:none}
+.pt-hp{position:absolute!important;inset-inline-start:-9999px;width:1px;height:1px;overflow:hidden}
+.pt-cks{border:0;margin:4px 0 0;padding:0;display:grid;gap:10px}
+.pt-ck{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;font-family:var(--ui);font-size:1rem;line-height:1.45;cursor:pointer}
+.pt-ck input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:0;border:2px solid #141414;border-radius:4px;background:#fff;display:grid;place-items:center;cursor:pointer}
+.pt-ck input::after{content:"";width:12px;height:7px;border:solid #141414;border-width:0 0 3px 3px;transform:rotate(-45deg) translate(1px,-1px) scale(0);transition:transform .15s}
+.pt-ck input:checked{background:var(--mark)}
+.pt-ck input:checked::after{transform:rotate(-45deg) translate(1px,-1px) scale(1)}
+.pt-ck input:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.pt-ck input[aria-invalid="true"]{border-color:#B3221A}
+.pt-ck a{color:#9E1B13;font-weight:700}
+.pt-go{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:10px;min-height:56px;margin-top:4px;background:#EB4034;color:#141414;font-family:var(--display);font-weight:800;font-size:1.45rem;border-radius:4px;box-shadow:0 5px 0 #141414;transition:transform .12s,box-shadow .12s,background .2s}
+.pt-go:hover{background:#FF5146}
+.pt-go:active{transform:translateY(4px);box-shadow:0 1px 0 #141414}
+.pt-go:focus-visible{outline:3px solid #141414;outline-offset:3px}
+.pt-go[aria-busy="true"]{pointer-events:none;opacity:.75}
+.pt-go[aria-busy="true"] .tx::after{content:"…"}
+.pt-go[disabled]{cursor:default;background:#BEB6A8;box-shadow:0 5px 0 #8A8277;font-size:1.15rem}
+.pt-msg{margin:0;font-family:var(--ui);font-weight:700;font-size:.98rem;color:#B3221A}
+.pt-msg:empty{display:none}
+.pt-msg.info{color:#141414}
+.pt-fine{margin:0;font-family:var(--ui);font-size:.9rem;color:#5B5B5B;line-height:1.45}
+.pt-signed{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0}
+.pt-signed span{font-family:var(--display);font-weight:800;font-size:4.2rem;color:#EB4034;border:7px solid #EB4034;padding:6px 26px 10px;border-radius:10px;transform:rotate(-14deg) scale(2.2);background:rgba(243,239,230,.6)}
+.pt-form.done .pt-signed{opacity:1;transition:opacity .12s}
+.pt-form.done .pt-signed span{transform:rotate(-14deg) scale(1);transition:transform .32s cubic-bezier(.4,1.9,.55,1)}
+
+/* CTA in the opening and the header */
+.mf-sign{font-family:var(--display);font-weight:800;font-size:1.15rem;background:var(--mark);color:#141414;text-decoration:none;padding:10px 22px 12px;border-radius:999px;box-shadow:0 4px 0 #8A6F00}
+.mf-sign:hover{background:#FFE14D}
+.mf-sign:focus-visible{outline:3px solid #F3EFE6;outline-offset:3px}
+.mf-btns .mf-share{background:transparent;color:#F3EFE6;box-shadow:inset 0 0 0 2px #FF5146}
+.mf-btns .mf-share:hover{background:rgba(255,81,70,.14)}
+header.bar nav a.nav-sign{background:var(--orange);color:#141414;opacity:1;font-weight:700}
+header.bar nav a.nav-sign:hover{background:#FF5146;color:#141414}
+header.bar nav a.nav-sign.on{background:var(--mark);color:#141414}
+
+@media (max-width:900px){
+  .pt{padding-block:56px 64px}
+  .pt .wrap.pt-grid{grid-template-columns:1fr;gap:28px}
+  .pt-stamp{position:absolute;top:-8px;inset-inline-end:0;width:84px;height:84px}
+  .pt-lead{font-size:1.05rem}
+  .pt-count b{font-size:2.8rem}
+}
+@media (max-width:420px){ .pt-form{padding:0 16px 18px} .pt-fh{margin:0 -16px 4px;padding:10px 16px} }
+@media (prefers-reduced-motion: reduce){ .pt-form.done .pt-signed span{transition:none} }
+
 /* mobile: fold long sections behind "read more" */
 .fold-wrap{position:relative}
 .folded{max-height:var(--fold,1100px);overflow:hidden;position:relative}
@@ -1096,6 +1174,7 @@ html.anim .wtl li:not(.lit) .vd.law{opacity:0;transform:translateY(6px)}
     <a href="#ballot">הקלפי</a>
     <a href="#coalition">ומה עכשיו</a>
     <a href="#sources">מקורות</a>
+    <a href="#petition" class="nav-sign" data-src="nav">חתמו</a>
   </nav>
 </div></header>
 
@@ -1111,7 +1190,7 @@ html.anim .wtl li:not(.lit) .vd.law{opacity:0;transform:translateY(6px)}
     <div class="mf-cta">
       <span class="mf-cta-k">הדרישה</span>
       <p class="mf-cta-t">להחיל את <mark>סעיף 7א לחוק־יסוד: הכנסת</mark> על רע״ם ועל הרשימה המשותפת בבחירות הבאות.</p>
-      <div class="mf-btns"><button type="button" class="mf-share" id="mfShare">שתפו את הדרישה</button><a class="mf-more" href="#chron">מה אומר סעיף 7א ←</a></div>
+      <div class="mf-btns"><a class="mf-sign" href="#petition" data-src="hero">חתמו על הדרישה</a><button type="button" class="mf-share" id="mfShare">שתפו</button><a class="mf-more" href="#chron">מה אומר סעיף 7א ←</a></div>
       <p class="mf-msg" id="mfMsg" role="status" aria-live="polite"></p>
     </div>
   </div>
@@ -1495,6 +1574,46 @@ html.anim .wtl li:not(.lit) .vd.law{opacity:0;transform:translateY(6px)}
   <figure class="bigq rv"><blockquote>הפלסטינים החליטו להשתמש בכוחם הפוליטי ככוח פרלמנטרי, וככלי לעמידה איתנה ולשמירה על קיומנו</blockquote><figcaption><b>יוסף ג׳בארין</b>, יו״ר הרשימה המשותפת, בריאיון למגזין הסעודי אל־מג׳לה, 28.10.2026 · <a href="#q-jabareen-1xz58">לציטוט ולמקור ←</a></figcaption></figure>
   <div class="stances" id="stances"></div>
   <p class="pull rv">ועדת הבחירות אמרה את דברה, ובית המשפט הפך אותה. סעיף 7א עדיין בספר החוקים, ומחכה לאכיפה.</p>
+</div></section>
+
+<section id="petition" class="pt" aria-labelledby="pt-h"><div class="wrap pt-grid">
+  <div class="pt-txt">
+    <span class="pt-k">העצומה</span>
+    <h2 id="pt-h"><span class="pt-l1">מוציאים את</span> <span class="pt-pal">פלסטין</span> <span class="pt-l1">מהכנסת.</span><span class="pt-l2">חתמו על הדרישה.</span></h2>
+    <p class="pt-lead">אנחנו דורשים להחיל את <mark>סעיף 7א לחוק־יסוד: הכנסת</mark> על רע״ם ועל הרשימה המשותפת בבחירות הבאות. ועדת הבחירות כבר פסלה אותן. בג״ץ החזיר אותן. הגיע הזמן שהחוק ייאכף.</p>
+    <p class="pt-count" id="ptCount" hidden><b id="ptN">0</b> <span>כבר חתמו</span></p>
+    <svg class="pt-stamp" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54"/><circle class="in" cx="60" cy="60" r="45"/><text x="60" y="76" text-anchor="middle">7א</text></svg>
+  </div>
+  <form class="pt-form" id="ptForm" novalidate>
+    <div class="pt-fh"><span>טופס חתימה</span><span class="pt-fno">עצומה 7א</span></div>
+    <div class="pt-f">
+      <label for="ptName">שם מלא</label>
+      <input id="ptName" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="ptNameE">
+      <p class="pt-err" id="ptNameE" role="alert"></p>
+    </div>
+    <div class="pt-f">
+      <label for="ptEmail">מייל</label>
+      <input id="ptEmail" name="email" type="email" inputmode="email" autocomplete="email" dir="ltr" required maxlength="120" aria-describedby="ptEmailE">
+      <p class="pt-err" id="ptEmailE" role="alert"></p>
+    </div>
+    <div class="pt-f">
+      <label for="ptPhone">טלפון נייד <small>רשות</small></label>
+      <input id="ptPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" maxlength="14" placeholder="05X-XXXXXXX" aria-describedby="ptPhoneE">
+      <p class="pt-err" id="ptPhoneE" role="alert"></p>
+    </div>
+    <div class="pt-hp" aria-hidden="true"><label for="ptWeb">אתר</label><input id="ptWeb" name="web" type="text" tabindex="-1" autocomplete="off"></div>
+    <fieldset class="pt-cks">
+      <legend class="vh">הסכמות</legend>
+      <label class="pt-ck"><input type="checkbox" id="ptTerms" required aria-describedby="ptTermsE"><span>קראתי ואני מסכים/ה ל<a href="terms.html" target="_blank" rel="noopener">תקנון ולהודעת הפרטיות</a></span></label>
+      <p class="pt-err" id="ptTermsE" role="alert"></p>
+      <label class="pt-ck"><input type="checkbox" id="ptNews"><span>אשמח לקבל עדכונים על העצומה במייל</span></label>
+      <label class="pt-ck"><input type="checkbox" id="ptSms"><span>אשמח לקבל עדכונים בווטסאפ או ב־SMS</span></label>
+    </fieldset>
+    <button type="submit" class="pt-go" id="ptGo"><span class="tx">אני חותם/ת</span></button>
+    <p class="pt-msg" id="ptMsg" role="status" aria-live="polite"></p>
+    <p class="pt-fine">חותמים פעם אחת לכל כתובת מייל. מפרסמים רק את מספר החותמים, לא שמות.</p>
+    <div class="pt-signed" aria-hidden="true"><span>נחתם</span></div>
+  </form>
 </div></section>
 
 <section id="sources"><div class="wrap">
@@ -2411,6 +2530,82 @@ markNav();
   function hashUnfold(){ const id=decodeURIComponent(location.hash.slice(1)); if(!id) return; const el=document.getElementById(id); if(el&&el.closest('.folded')){ el.scrollIntoView({block:'start'}); } }
   window.addEventListener('hashchange',hashUnfold); hashUnfold();
 })();
+/* petition form: posts to the Google Apps Script web app, then goes to thanks.html */
+(function(){
+  const PETITION_URL='';
+  const form=document.getElementById('ptForm'); if(!form) return;
+  const live=/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(PETITION_URL);
+  const $=id=>document.getElementById(id);
+  const go=$('ptGo'), msg=$('ptMsg');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let src=(new URLSearchParams(location.search).get('src')||'').slice(0,40)||'direct', t0=0;
+  document.addEventListener('click',e=>{ const a=e.target.closest&&e.target.closest('a[href="#petition"]'); if(a) src=a.dataset.src||src; });
+  form.addEventListener('focusin',()=>{ if(!t0) t0=Date.now(); });
+
+  if(!live){ go.disabled=true; go.querySelector('.tx').textContent='העצומה נפתחת לחתימה בקרוב'; }
+
+  /* counter */
+  const cnt=$('ptCount'), cN=$('ptN');
+  function showCount(n){ if(!(n>=1)) return; cnt.hidden=false;
+    if(reduce||!window.gsap){ cN.textContent=n.toLocaleString('he-IL'); return; }
+    const o={v:0}; gsap.to(o,{v:n,duration:1.4,ease:'power2.out',onUpdate:()=>cN.textContent=Math.round(o.v).toLocaleString('he-IL')}); }
+  function loadCount(){ if(!live) return; fetch(PETITION_URL+'?action=count',{cache:'no-store'}).then(r=>r.json()).then(d=>showCount(d.count)).catch(()=>{}); }
+
+  /* entrance: strike "פלסטין", drop the stamp */
+  const sec=$('petition');
+  if('IntersectionObserver' in window){
+    const pal=sec.querySelector('.pt-pal'), st=sec.querySelector('.pt-stamp');
+    if(!reduce&&window.gsap){ pal.style.setProperty('--strike',0); gsap.set(st,{autoAlpha:0,scale:1.8,rotation:-30}); }
+    const io=new IntersectionObserver(es=>{ if(!es.some(e=>e.isIntersecting)) return; io.disconnect(); loadCount();
+      if(!reduce&&window.gsap){ gsap.to(pal,{'--strike':1,duration:.55,ease:'power2.inOut',delay:.3}); gsap.to(st,{autoAlpha:.95,scale:1,rotation:-12,duration:.45,ease:'back.out(2.2)',delay:.75}); } },{threshold:.25});
+    io.observe(sec);
+  } else loadCount();
+
+  /* validation */
+  const F={name:$('ptName'),email:$('ptEmail'),phone:$('ptPhone'),terms:$('ptTerms'),news:$('ptNews'),sms:$('ptSms')};
+  const E={name:$('ptNameE'),email:$('ptEmailE'),phone:$('ptPhoneE'),terms:$('ptTermsE')};
+  const TXT={name:'כתבו שם מלא.',email:'כתובת המייל לא נראית תקינה.',phone:'מספר נייד ישראלי: 10 ספרות שמתחילות ב־05.',smsphone:'כדי לקבל עדכונים בווטסאפ או ב־SMS, כתבו מספר נייד.',terms:'כדי לחתום צריך להסכים לתקנון.'};
+  const digits=s=>String(s||'').replace(/[^\d]/g,'').replace(/^972/,'0');
+  function setErr(k,t){ E[k].textContent=t||''; F[k].setAttribute('aria-invalid',t?'true':'false'); }
+  function check(quiet){
+    const v={name:F.name.value.replace(/\s+/g,' ').trim(), email:F.email.value.trim(), phone:digits(F.phone.value)};
+    const errs={};
+    if(v.name.length<2) errs.name=TXT.name;
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)) errs.email=TXT.email;
+    if(v.phone && !/^05\d{8}$/.test(v.phone)) errs.phone=TXT.phone;
+    else if(F.sms.checked && !v.phone) errs.phone=TXT.smsphone;
+    if(!F.terms.checked) errs.terms=TXT.terms;
+    if(!quiet) ['name','email','phone','terms'].forEach(k=>setErr(k,errs[k]));
+    return {v,errs};
+  }
+  /* re-check a field only while the person fixes it (typing), never on blur: no layout jump under the pointer */
+  function one(k){ const r=check(true); setErr(k,r.errs[k]); }
+  ['name','email','phone'].forEach(k=>F[k].addEventListener('input',()=>{ if(F[k].getAttribute('aria-invalid')==='true') one(k); }));
+  F.sms.addEventListener('change',()=>{ if(F.phone.getAttribute('aria-invalid')==='true') one('phone'); });
+  F.terms.addEventListener('change',()=>{ if(F.terms.checked) setErr('terms',''); });
+
+  const ERR={name:TXT.name,email:TXT.email,phone:TXT.phone,terms:TXT.terms,'too-fast':'רגע, נסו שוב בעוד שנייה.',bot:'לא הצלחנו לאמת את החתימה. נסו שוב.',server:'משהו השתבש אצלנו. נסו שוב בעוד רגע.'};
+  form.addEventListener('submit',e=>{
+    e.preventDefault(); if(!live||go.getAttribute('aria-busy')==='true') return;
+    msg.textContent=''; msg.className='pt-msg';
+    const {v,errs}=check(); const bad=Object.keys(errs);
+    if(bad.length){ F[bad[0]].focus(); return; }
+    go.setAttribute('aria-busy','true'); msg.className='pt-msg info'; msg.textContent='שולחים את החתימה';
+    const body={name:v.name,email:v.email,phone:v.phone,terms:true,news:F.news.checked,sms:F.sms.checked,source:src,t:t0?Date.now()-t0:0,hp:$('ptWeb').value};
+    const ac=('AbortController' in window)?new AbortController():null; const to=setTimeout(()=>ac&&ac.abort(),20000);
+    fetch(PETITION_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body),signal:ac&&ac.signal})
+      .then(r=>r.json()).then(d=>{
+        clearTimeout(to);
+        if(!d||!d.ok){ go.removeAttribute('aria-busy'); msg.className='pt-msg'; msg.textContent=ERR[d&&d.error]||ERR.server; if(d&&E[d.error]){ setErr(d.error,ERR[d.error]); F[d.error].focus(); } return; }
+        try{ sessionStorage.setItem('pt',JSON.stringify({n:v.name.split(' ')[0].slice(0,30),c:d.count||0,s:d.status})); }catch(_){}
+        msg.textContent='';
+        form.classList.add('done');
+        setTimeout(()=>{ location.href='thanks.html'; }, reduce?150:850);
+      })
+      .catch(()=>{ clearTimeout(to); go.removeAttribute('aria-busy'); msg.className='pt-msg'; msg.textContent='אין חיבור כרגע. בדקו את האינטרנט ונסו שוב.'; });
+  });
+})();
+
 /* analytics: GoatCounter, cookieless. Self-hosted ping, no third-party script runs on the page. */
 (function(){
   const EP='https://hakibush.goatcounter.com/count';
