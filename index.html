@@ -24,6 +24,7 @@
 <meta name="twitter:title" content="מוציאים את פלסטין מהכנסת">
 <meta name="twitter:description" content="19 מנדטים של רע״ם והרשימה המשותפת: מה הם אומרים, בקול ועם מקורות. והדרישה: להחיל עליהם את סעיף 7א בבחירות הבאות.">
 <meta name="twitter:image" content="https://hakibush.com/share-main.jpg">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebSite", "name": "הכירו אותם", "alternateName": "hakibush.com", "url": "https://hakibush.com/", "inLanguage": "he"}, {"@context": "https://schema.org", "@type": "CollectionPage", "name": "19 הנבחרים של רע״ם והרשימה המשותפת", "url": "https://hakibush.com/mk/", "inLanguage": "he"}]</script>
 </head>
 <body>
 <style>
@@ -320,6 +321,14 @@ footer.site p{font-size:1rem}
   .pcard,.seat,.tl-item{transition:border-color .15s,background .15s,color .15s}
 }
 
+/* mk static links */
+.mk-links{margin-top:22px;font-family:var(--ui);font-size:.95rem}
+.mk-links b{display:block;margin-bottom:8px}
+.mk-links ul{list-style:none;margin:0 0 8px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.mk-links ul a{display:inline-block;border:1px solid var(--rule,#ccc);border-radius:999px;padding:3px 11px;text-decoration:none;color:var(--ink)}
+.mk-links ul a:hover{border-color:var(--accent)}
+.mk-links .mk-all{font-weight:700}
+.dlg-perm{font-family:var(--ui);font-weight:700;font-size:.9rem}
 /* quote wall */
 .narr{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--ui)}
 .narr button{all:unset;cursor:pointer;display:inline-flex;gap:8px;align-items:baseline;padding:7px 14px;border:1.5px solid var(--ink);border-radius:999px;font-size:.95rem;font-weight:600;background:var(--paper)}
@@ -1213,7 +1222,7 @@ header.bar nav a.nav-sign.on{background:var(--mark);color:#141414}
   <div class="hero-grid">
   <div class="hero-txt rv-s">
   <span class="stamp"><span>הכיבוש הפרלמנטרי</span><span>· בחירות 2026</span></span>
-  <h2 class="h1x">הכירו<br><span class="h1o">אותם.</span></h2>
+  <h2 class="h1x">הכירו <br><span class="h1o">אותם.</span></h2>
   <p class="standfirst">19 מנדטים לשתי מפלגות שוועדת הבחירות קבעה כי הן תומכות במאבק המזוין של אויבי ישראל. בלעדיהן, לגוש השינוי יש רק 48. כדי להגיע לרוב, איזנקוט צריך אותן.</p>
   </div>
   <figure class="hero-fig rv">
@@ -1441,6 +1450,7 @@ header.bar nav a.nav-sign.on{background:var(--mark);color:#141414}
   </div>
   <div class="roster" id="roster"></div>
   <div class="people" id="cards"></div>
+  <nav class="mk-links" aria-label="דף לכל נבחר"><b>דף קבוע לכל נבחר, עם כל הציטוטים והמקורות:</b><ul><li><a href="mk/jabareen">יוסף ג׳בארין</a></li><li><a href="mk/tibi">אחמד טיבי</a></li><li><a href="mk/ghattas">פאתן גטאס</a></li><li><a href="mk/awawdeh">בכר עואודה</a></li><li><a href="mk/atauna">יוסף עטאונה</a></li><li><a href="mk/karkabi">מהא כרכבי־סבאח</a></li><li><a href="mk/darawshe">אחמד דראושה</a></li><li><a href="mk/washahi">נהאיה ושאחי</a></li><li><a href="mk/nasasra">חסן נסאסרה</a></li><li><a href="mk/zahalqa">הייתם זחאלקה</a></li><li><a href="mk/abbas">מנסור עבאס</a></li><li><a href="mk/taha">וליד טאהא</a></li><li><a href="mk/alhawashla">ואליד אלהואשלה</a></li><li><a href="mk/khatib">אימאן ח׳טיב־יאסין</a></li><li><a href="mk/hujirat">יאסר חוג׳יראת</a></li><li><a href="mk/alturi">איברהים אלטורי</a></li><li><a href="mk/masri">עבד אל־כרים מסרי</a></li></ul><a class="mk-all" href="mk/">כל הנבחרים ←</a></nav>
 </div></section>
 
 <section id="wall-body"><div class="wrap">
@@ -2459,7 +2469,7 @@ function openP(slug){
   const p = PMAP[slug]; if(!p||!p.items.length) return;
   const its = p.items.slice().sort((a,b)=>(yearOf(b[1])||0)-(yearOf(a[1])||0));
   $('#dlg-body').innerHTML = `
-    <div class="dlg-h"><div style="display:grid;gap:6px"><span class="meta">${party(p)} · מקום ${p.n}</span><h2 id="dlg-name">${esc(p.name)}</h2><span class="meta">${esc(p.bio)}</span></div>
+    <div class="dlg-h"><div style="display:grid;gap:6px"><span class="meta">${party(p)} · מקום ${p.n}</span><h2 id="dlg-name">${esc(p.name)}</h2><span class="meta">${esc(p.bio)}</span>${['cassif','segalovitz'].includes(p.slug)?'':`<a class="dlg-perm" href="mk/${p.slug}" data-ev="dlg/perm/${p.slug}">לדף הקבוע של ${esc(p.name)} ←</a>`}</div>
       <div class="dlg-tools"><button type="button" class="prt" data-print>הדפסה / PDF</button><button type="button" class="close" data-close aria-label="סגירה">×</button></div></div>
     <ul class="plist">${its.map(i=>`<li><span class="tagn">${NARR[i[3]]}</span><blockquote>${esc(i[0])}</blockquote>${origHtml(i[4])}<div class="row"><span>${esc(i[1])}</span>${srcLink(i[2])} ${shareBtn(qid(p.slug,i[0]))}</div></li>`).join('')}</ul>${pVideos(p.slug)}`;
   if(!dlg.open) dlg.showModal();
